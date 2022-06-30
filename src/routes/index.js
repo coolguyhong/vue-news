@@ -3,7 +3,7 @@ import NewsView from '@/views/NewsView'
 import AskView from '@/views/AskView'
 import JobsView from '@/views/JobsView'
 import ItemView from '@/views/ItemView'
-import UserView from "@/views/UserView";
+import UserView from '@/views/UserView'
 
 const routes = [
   {

@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <tool-bar></tool-bar>
-    <transition name="page">
-      <router-view></router-view>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="page">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ body {
 
 /* Router Transition */
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .5s ease;
 }
 .page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {
   opacity: 0;

@@ -6,7 +6,9 @@ export const store = createStore({
   state: {
     newsList: [],
     jobsList: [],
-    askList: []
+    askList: [],
+    user: {},
+    item: {}
   },
   getters: {
     fetchedAsk(state) {

@@ -18,10 +18,20 @@ const fetchAskList = () => {
   return axios.get(`${config.baseUrl}ask/1.json`)
 }
 
+const fetchUserInfo = (username) => {
+  return axios.get(`${config.baseUrl}user/${username}.json`)
+}
+
+const fetchItemInfo = (itemId) => {
+  return axios.get(`${config.baseUrl}item/${itemId}.json`)
+}
+
 
 
 export {
   fetchNewsList,
   fetchJobsList,
-  fetchAskList
+  fetchAskList,
+  fetchUserInfo,
+  fetchItemInfo
 }

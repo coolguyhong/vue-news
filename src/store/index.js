@@ -5,8 +5,8 @@ import actions from './actions'
 export const store = createStore({
   state: {
     newsList: [],
-    jobsList: [],
     askList: [],
+    jobsList: [],
     user: {},
     item: {}
   },

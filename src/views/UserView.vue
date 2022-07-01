@@ -1,16 +1,26 @@
 <template>
-  <div>
-    <p>name : {{ user.id }}</p>
-    <p>karma : {{ user.karma }}</p>
-    <p>created: {{ user.created }}</p>
-  </div>
+  <user-profile v-bind:info="user">
+    <template v-slot:username>
+      <div>{{ user.id }}</div>
+    </template>
+    <template v-slot:time>
+      <span>{{ 'Joined ' + user.created }}, </span>
+    </template>
+    <template v-slot:karma>
+      <span>{{ user.karma }}</span>
+    </template>
+  </user-profile>
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile'
 import { mapState } from 'vuex'
 
 export default {
   name: 'UserView',
+  components: {
+    UserProfile
+  },
   computed: {
     ...mapState({
       user: state => state.user

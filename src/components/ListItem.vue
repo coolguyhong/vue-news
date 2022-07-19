@@ -41,31 +41,22 @@ export default {
   name: 'ListItem',
   computed: {
     listItems() {
-      const name = this.$route.name
-      if (name === 'news') {
-        return this.$store.state.newsList
-      } else if (name === 'ask') {
-        return this.$store.state.askList
-      } else if (name === 'jobs') {
-        return this.$store.state.jobsList
-      } else {
-        return []
-      }
+      return this.$store.state.list
     }
   },
-  created() {
+  // created() {
     // 지금 this는 해당 컴포넌트(NewsView)
     // JavaScript 기본적 this 전역
     // 비동기 후 es6 화살표 함수는 this 기존 컴포넌트
-    const name = this.$route.name
-    if (name === 'news') {
-      this.$store.dispatch('FETCH_NEWS')
-    } else if (name === 'ask') {
-      this.$store.dispatch('FETCH_ASK')
-    } else if (name === 'jobs') {
-      this.$store.dispatch('FETCH_JOBS')
-    }
-  }
+  //   const name = this.$route.name
+  //   if (name === 'news') {
+  //     this.$store.dispatch('FETCH_NEWS')
+  //   } else if (name === 'ask') {
+  //     this.$store.dispatch('FETCH_ASK')
+  //   } else if (name === 'jobs') {
+  //     this.$store.dispatch('FETCH_JOBS')
+  //   }
+  // }
 }
 </script>
 

@@ -4,12 +4,27 @@
 
 <script>
 import ListItem from '@/components/ListItem'
+import ListMixin from '@/mixins/ListMixin'
 
 export default {
   name: 'NewsView',
   components: {
-    ListItem
-  }
+    ListItem,
+  },
+  mixins: [ListMixin]
+  // created() {
+  //   this.emitter.emit('start:spinner')
+  //   setTimeout(() => {
+  //     this.$store.dispatch('FETCH_NEWS')
+  //       .then(() => {
+  //         console.log('fetched')
+  //         this.emitter.emit('end:spinner')
+  //       })
+  //       .catch((error) => {
+  //         console.error(error)
+  //       })
+  //   }, 3000)
+  // }
 }
 </script>
 

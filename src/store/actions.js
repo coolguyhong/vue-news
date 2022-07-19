@@ -2,6 +2,7 @@ import {
   fetchAskList,
   fetchJobsList,
   fetchNewsList,
+  fetchList,
   fetchUserInfo,
   fetchItemInfo
 } from '@/api'
@@ -11,6 +12,7 @@ export default {
     fetchNewsList()
       .then(response => {
         commit('SET_NEWS', response.data)
+        return response
       })
       .catch(error => {
         console.error(error)
@@ -20,6 +22,7 @@ export default {
     fetchJobsList()
       .then(response => {
         context.commit('SET_JOBS', response.data)
+        return response
       })
       .catch(error => {
         console.error(error)
@@ -29,6 +32,7 @@ export default {
     fetchAskList()
       .then(({ data }) => {
         commit('SET_ASK', data)
+        return data
       })
       .catch(error => {
         console.error(error)
@@ -51,5 +55,10 @@ export default {
       .catch(error => {
         console.error(error)
       })
+  },
+  FETCH_LIST({ commit }, pageName) {
+    fetchList(pageName)
+      .then(({ data }) => commit('SET_LIST', data))
+      .catch(error => console.error(error))
   }
 }

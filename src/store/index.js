@@ -8,7 +8,8 @@ export const store = createStore({
     askList: [],
     jobsList: [],
     user: {},
-    item: {}
+    item: {},
+    list: []
   },
   getters: {
     fetchedAsk(state) {

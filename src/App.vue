@@ -26,9 +26,11 @@ export default {
   },
   methods: {
     startSpinner() {
+      console.log('start')
       this.loadingStatus = true
     },
     endSpinner() {
+      console.log('end')
       this.loadingStatus = false
     }
   },

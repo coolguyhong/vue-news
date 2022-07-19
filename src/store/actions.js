@@ -56,6 +56,7 @@ export default {
   FETCH_LIST({ commit }, pageName) {
     return fetchList(pageName)
       .then(response => {
+        console.log(1)
         commit('SET_LIST', response.data)
       })
       .catch(error => console.error(error))

@@ -9,37 +9,34 @@ import {
 
 export default {
   FETCH_NEWS({ commit }) {
-    fetchNewsList()
+    return fetchNewsList()
       .then(response => {
         commit('SET_NEWS', response.data)
-        return response
       })
       .catch(error => {
         console.error(error)
       })
   },
   FETCH_JOBS(context) {
-    fetchJobsList()
+    return fetchJobsList()
       .then(response => {
         context.commit('SET_JOBS', response.data)
-        return response
       })
       .catch(error => {
         console.error(error)
       })
   },
   FETCH_ASK({ commit }) {
-    fetchAskList()
+    return fetchAskList()
       .then(({ data }) => {
         commit('SET_ASK', data)
-        return data
       })
       .catch(error => {
         console.error(error)
       })
   },
   FETCH_USER({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then(({ data }) => {
         commit('SET_USER', data)
       })
@@ -48,7 +45,7 @@ export default {
       })
   },
   FETCH_ITEM({ commit }, id) {
-    fetchItemInfo(id)
+    return fetchItemInfo(id)
       .then(({ data }) => {
         commit('SET_ITEM', data)
       })
@@ -57,8 +54,10 @@ export default {
       })
   },
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName)
-      .then(({ data }) => commit('SET_LIST', data))
+    return fetchList(pageName)
+      .then(response => {
+        commit('SET_LIST', response.data)
+      })
       .catch(error => console.error(error))
   }
 }

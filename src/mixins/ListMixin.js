@@ -4,7 +4,6 @@ export default {
     this.emitter.emit('start:spinner')
     this.$store.dispatch('FETCH_LIST', this.$route.name)
       .then(() => {
-        console.log('fetched')
         this.emitter.emit('end:spinner')
       })
       .catch((error) => {

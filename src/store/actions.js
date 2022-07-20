@@ -8,57 +8,54 @@ import {
 } from '@/api'
 
 export default {
-  FETCH_NEWS({ commit }) {
-    return fetchNewsList()
-      .then(response => {
-        commit('SET_NEWS', response.data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+  async FETCH_NEWS({ commit }) {
+    try {
+      const response = await fetchNewsList()
+      commit('SET_NEWS', response.data)
+      return response
+    } catch (error) {
+      console.error(error)
+    }
   },
-  FETCH_JOBS(context) {
-    return fetchJobsList()
-      .then(response => {
-        context.commit('SET_JOBS', response.data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+  async FETCH_JOBS(context) {
+    try {
+      const response = await fetchJobsList()
+      context.commit('SET_JOBS', response.data)
+      return response
+    } catch (error) {
+      console.error(error)
+    }
   },
-  FETCH_ASK({ commit }) {
-    return fetchAskList()
-      .then(({ data }) => {
-        commit('SET_ASK', data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+  async FETCH_ASK({ commit }) {
+    const response = await fetchAskList()
+    commit('SET_ASK', response.data)
+    return response
   },
-  FETCH_USER({ commit }, name) {
-    return fetchUserInfo(name)
-      .then(({ data }) => {
-        commit('SET_USER', data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+  async FETCH_USER({ commit }, name) {
+    try {
+      const response = await fetchUserInfo(name)
+      commit('SET_USER', response.data)
+      return response
+    } catch (error) {
+      console.error(error)
+    }
   },
-  FETCH_ITEM({ commit }, id) {
-    return fetchItemInfo(id)
-      .then(({ data }) => {
-        commit('SET_ITEM', data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+  async FETCH_ITEM({ commit }, id) {
+    try {
+      const response = await fetchItemInfo(id)
+      commit('SET_ITEM', response.data)
+      return response
+    } catch (error) {
+      console.error(error)
+    }
   },
-  FETCH_LIST({ commit }, pageName) {
-    return fetchList(pageName)
-      .then(response => {
-        console.log(1)
-        commit('SET_LIST', response.data)
-      })
-      .catch(error => console.error(error))
+  async FETCH_LIST({ commit }, pageName) {
+    try {
+      const response = await fetchList(pageName);
+      commit('SET_LIST', response.data)
+      return response
+    } catch (error) {
+      console.error(error)
+    }
   }
 }

@@ -4,6 +4,7 @@ import AskView from '@/views/AskView'
 import JobsView from '@/views/JobsView'
 import ItemView from '@/views/ItemView'
 import UserView from '@/views/UserView'
+import ChartsView from '@/views/ChartsView'
 // import createListView from '@/views/CreateListView'
 
 const routes = [
@@ -64,6 +65,11 @@ const routes = [
     //       console.error(error)
     //     })
     // },
+  },
+  {
+    path: '/charts',
+    name: 'charts',
+    component: ChartsView
   },
   {
     path: '/item/:id',

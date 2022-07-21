@@ -6,7 +6,8 @@
     <router-link to="/charts">Charts</router-link> |
     <router-link to="/component">Component</router-link> |
     <router-link to="/slots">Slots</router-link> |
-    <router-link to="/controlled">Controlled</router-link>
+    <router-link to="/controlled">Controlled</router-link> |
+    <router-link to="/renderless">Renderless</router-link>
   </div>
 </template>
 

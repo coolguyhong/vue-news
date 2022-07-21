@@ -8,6 +8,7 @@ import ChartsView from '@/views/ChartsView'
 import ComponentView from '@/views/ComponentView'
 import SlotsView from '@/views/SlotsView'
 import ControlledView from '@/views/ControlledView'
+import RenderlessView from '@/views/RenderlessView'
 // import createListView from '@/views/CreateListView'
 
 const routes = [
@@ -88,6 +89,11 @@ const routes = [
     path: '/controlled',
     name: 'controlled',
     component: ControlledView
+  },
+  {
+    path: '/renderless',
+    name: 'renderless',
+    component: RenderlessView
   },
   {
     path: '/item/:id',

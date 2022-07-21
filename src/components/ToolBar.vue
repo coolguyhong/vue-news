@@ -5,7 +5,8 @@
     <router-link to="/jobs">Jobs</router-link> |
     <router-link to="/charts">Charts</router-link> |
     <router-link to="/component">Component</router-link> |
-    <router-link to="/slots">Slots</router-link>
+    <router-link to="/slots">Slots</router-link> |
+    <router-link to="/controlled">Controlled</router-link>
   </div>
 </template>
 

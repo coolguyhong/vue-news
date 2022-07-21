@@ -5,6 +5,7 @@ import JobsView from '@/views/JobsView'
 import ItemView from '@/views/ItemView'
 import UserView from '@/views/UserView'
 import ChartsView from '@/views/ChartsView'
+import ComponentView from '@/views/ComponentView'
 // import createListView from '@/views/CreateListView'
 
 const routes = [
@@ -70,6 +71,11 @@ const routes = [
     path: '/charts',
     name: 'charts',
     component: ChartsView
+  },
+  {
+    path: '/component',
+    name: 'component',
+    component: ComponentView
   },
   {
     path: '/item/:id',
